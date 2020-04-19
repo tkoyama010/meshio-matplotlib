@@ -7,6 +7,40 @@ from typing import List, Tuple
 import numpy as np
 
 
+def hexahedrons_to_quads(cell_datas: np.ndarray) -> np.ndarray:
+    """hexahedrons_to_quads
+
+     convert hexahedrons cells to quad faces.
+
+    Args:
+       cell_datas: point index of cells
+
+    Returns:
+       face_datas: point index of faces
+
+    """
+    face_datas = []
+    for cell_data in cell_datas:
+        face_datas.append(
+            [cell_data[0], cell_data[1], cell_data[2], cell_data[3]]
+        )
+        face_datas.append(
+            [cell_data[5], cell_data[4], cell_data[7], cell_data[6]]
+        )
+        face_datas.append(
+            [cell_data[4], cell_data[0], cell_data[3], cell_data[7]]
+        )
+        face_datas.append(
+            [cell_data[1], cell_data[5], cell_data[6], cell_data[2]]
+        )
+        face_datas.append(
+            [cell_data[4], cell_data[5], cell_data[1], cell_data[0]]
+        )
+        face_datas.append(
+            [cell_data[3], cell_data[2], cell_data[6], cell_data[7]]
+        )
+    return face_datas
+
 class Mesh:
     """Mesh object
 
@@ -51,40 +85,6 @@ class Mesh:
             cell_datas = cell[1]
             if cell_type == "hexahedron":
                 face_type = "quad"
-                face_datas = self.hexahedrons_to_quads(cell_datas)
+                face_datas = hexahedrons_to_quads(cell_datas)
                 faces.append((face_type, np.array(face_datas)))
         return faces
-
-    def hexahedrons_to_quads(self, cell_datas: np.ndarray) -> np.ndarray:
-        """hexahedrons_to_quads
-
-         convert hexahedrons cells to quad faces.
-
-        Args:
-           cell_datas: point index of cells
-
-        Returns:
-           face_datas: point index of faces
-
-        """
-        face_datas = []
-        for cell_data in cell_datas:
-            face_datas.append(
-                [cell_data[0], cell_data[1], cell_data[2], cell_data[3]]
-            )
-            face_datas.append(
-                [cell_data[5], cell_data[4], cell_data[7], cell_data[6]]
-            )
-            face_datas.append(
-                [cell_data[4], cell_data[0], cell_data[3], cell_data[7]]
-            )
-            face_datas.append(
-                [cell_data[1], cell_data[5], cell_data[6], cell_data[2]]
-            )
-            face_datas.append(
-                [cell_data[4], cell_data[5], cell_data[1], cell_data[0]]
-            )
-            face_datas.append(
-                [cell_data[3], cell_data[2], cell_data[6], cell_data[7]]
-            )
-        return face_datas
