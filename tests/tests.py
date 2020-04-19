@@ -1,6 +1,6 @@
-import matplotlib.pyplot as plt
 import meshio
 import numpy as np
+from numpy.testing import assert_array_equal
 
 import meshioplt as mplt
 
@@ -20,4 +20,21 @@ def test():
     )
     cells = [("hexahedron", np.array([[0, 1, 3, 2, 4, 5, 7, 6]]))]
     mesh = mplt.Mesh(points, cells)
-    return True
+    actual = mesh.faces
+    expected = [
+        (
+            "quad",
+            np.array(
+                [
+                    [0, 1, 2, 3],
+                    [5, 4, 7, 6],
+                    [4, 0, 6, 2],
+                    [1, 5, 3, 7],
+                    [4, 5, 0, 1],
+                    [2, 3, 6, 7],
+                ]
+            ),
+        )
+    ]
+    assert expected[0][0] == actual[0][0]
+    assert_array_equal(expected[0][1], actual[0][1])
