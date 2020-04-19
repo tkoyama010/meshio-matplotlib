@@ -51,6 +51,21 @@ def tetra_to_triangle(cell_datas: np.ndarray) -> np.ndarray:
     return face_datas
 
 
+def cell_to_face(cell: Tuple[str, np.ndarray]) -> Tuple[str, np.ndarray]:
+    cell_type = cell[0]
+    cell_datas = cell[1]
+    if cell_type == "hexahedron":
+        face_type = "quad"
+        face_datas = hexahedrons_to_quads(cell_datas)
+        return (face_type, np.array(face_datas))
+    if cell_type == "tetra":
+        face_type = "triangle"
+        face_datas = tetra_to_triangle(cell_datas)
+        return (face_type, np.array(face_datas))
+    else:
+        return ("none", np.array([]))
+
+
 class Mesh:
     """Mesh object
 
@@ -91,14 +106,6 @@ class Mesh:
         """
         faces = []
         for cell in self.cells:
-            cell_type = cell[0]
-            cell_datas = cell[1]
-            if cell_type == "hexahedron":
-                face_type = "quad"
-                face_datas = hexahedrons_to_quads(cell_datas)
-                faces.append((face_type, np.array(face_datas)))
-            if cell_type == "tetra":
-                face_type = "triangle"
-                face_datas = tetra_to_triangle(cell_datas)
-                faces.append((face_type, np.array(face_datas)))
+            face = cell_to_face(cell)
+            faces.append(face)
         return faces
