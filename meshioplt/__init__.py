@@ -47,7 +47,6 @@ class Mesh:
         """
         faces = []
         for cell in self.cells:
-            cell_type = cell[0]
             cell_datas = cell[1]
             face_type = "quad"
             face_datas = []
