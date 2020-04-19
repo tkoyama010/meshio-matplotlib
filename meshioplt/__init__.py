@@ -41,6 +41,7 @@ def hexahedrons_to_quads(cell_datas: np.ndarray) -> np.ndarray:
         )
     return face_datas
 
+
 def tetra_to_triangle(cell_datas: np.ndarray) -> np.ndarray:
     """tetra_to_triangle
 
