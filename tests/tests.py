@@ -21,11 +21,18 @@ def test():
     mesh = mplt.Mesh(points, cells)
     actual = mesh.faces
     expected = [
-        meshio.CellBlock("quad", np.array([0, 1, 2, 3])),
-        meshio.CellBlock("quad", np.array([5, 4, 7, 6])),
-        meshio.CellBlock("quad", np.array([4, 0, 6, 2])),
-        meshio.CellBlock("quad", np.array([1, 5, 3, 7])),
-        meshio.CellBlock("quad", np.array([4, 5, 0, 1])),
-        meshio.CellBlock("quad", np.array([2, 3, 6, 7])),
+        (
+            "quad",
+            np.array(
+                [
+                    [0, 1, 2, 3],
+                    [5, 4, 7, 6],
+                    [4, 0, 6, 2],
+                    [1, 5, 3, 7],
+                    [4, 5, 0, 1],
+                    [2, 3, 6, 7],
+                ]
+            ),
+        )
     ]
     assert expected == actual
