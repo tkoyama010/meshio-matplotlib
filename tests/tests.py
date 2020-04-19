@@ -45,13 +45,6 @@ def test():
                     [1, 5, 7, 3],
                     [4, 5, 1, 0],
                     [2, 3, 7, 6],
-                ]
-            ),
-        ),
-        (
-            "quad",
-            np.array(
-                [
                     [7, 8, 10, 9],
                     [12, 11, 13, 14],
                     [11, 7, 9, 13],
@@ -64,5 +57,3 @@ def test():
     ]
     assert expected[0][0] == actual[0][0]
     assert_array_equal(expected[0][1], actual[0][1])
-    assert expected[1][0] == actual[1][0]
-    assert_array_equal(expected[1][1], actual[1][1])
