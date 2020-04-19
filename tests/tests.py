@@ -19,5 +19,5 @@ def test():
         ]
     )
     cells = [("hexahedron", np.array([[0, 1, 3, 2, 4, 5, 7, 6]]))]
-    mesh = mplt.mesh(points, cells)
+    mesh = mplt.Mesh(points, cells)
     return True
