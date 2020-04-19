@@ -44,6 +44,7 @@ jobs:
         use-black: true
         use-mypy: true
         use-isort: true
+        extra-pylint-options: --disable=F0401
         extra-mypy-options: --ignore-missing-imports
     - name: Test with pytest
       run: |
