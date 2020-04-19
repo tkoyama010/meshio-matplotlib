@@ -45,32 +45,30 @@ class Mesh:
 
          faces of mesh.
         """
-        faces = [
-            (
-                "quad",
-                np.array(
-                    [
-                        [0, 1, 3, 2],
-                        [5, 4, 6, 7],
-                        [4, 0, 2, 6],
-                        [1, 5, 7, 3],
-                        [4, 5, 1, 0],
-                        [2, 3, 7, 6],
-                    ]
-                ),
-            ),
-            (
-                "quad",
-                np.array(
-                    [
-                        [7, 8, 10, 9],
-                        [12, 11, 13, 14],
-                        [11, 7, 9, 13],
-                        [8, 12, 14, 10],
-                        [11, 12, 8, 7],
-                        [9, 10, 14, 13],
-                    ]
-                ),
-            ),
-        ]
+        faces = []
+        for cell in self.cells:
+            cell_type = cell[0]
+            cell_datas = cell[1]
+            face_type = "quad"
+            face_datas = []
+            for cell_data in cell_datas:
+                face_datas.append(
+                        [cell_data[0], cell_data[1], cell_data[2], cell_data[3]]
+                )
+                face_datas.append(
+                        [cell_data[5], cell_data[4], cell_data[7], cell_data[6]]
+                )
+                face_datas.append(
+                        [cell_data[4], cell_data[0], cell_data[3], cell_data[7]]
+                )
+                face_datas.append(
+                        [cell_data[1], cell_data[5], cell_data[6], cell_data[2]]
+                )
+                face_datas.append(
+                        [cell_data[4], cell_data[5], cell_data[1], cell_data[0]]
+                )
+                face_datas.append(
+                        [cell_data[3], cell_data[2], cell_data[6], cell_data[7]]
+                )
+            faces.append((face_type, np.array(face_datas)))
         return faces
