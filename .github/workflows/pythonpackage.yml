@@ -45,7 +45,9 @@ jobs:
         use-mypy: true
         use-isort: true
         extra-pylint-options: --disable=F0401
-        extra-mypy-options: --ignore-missing-imports
+        extra-pycodestyle-options: --ignore="E501,W503"
+        extra-mypy-options: --no-implicit-optional
+        extra-flake8-options: ---max-line-length 88
     - name: Test with pytest
       run: |
         pip install pytest
