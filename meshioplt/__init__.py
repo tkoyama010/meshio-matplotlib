@@ -18,7 +18,7 @@ class Mesh:
 
     """
 
-    def __init__(self, points: np.ndarray, cells: List(Tuple(str, np.ndarray))) -> None:
+    def __init__(self, points: np.ndarray, cells: List[Tuple[str, np.ndarray]]) -> None:
         self._points = points
         self._cells = cells
 
@@ -31,7 +31,7 @@ class Mesh:
         return self._points
 
     @property
-    def cells(self) -> List(Tuple(str, np.ndarray)):
+    def cells(self) -> List[Tuple[str, np.ndarray]]:
         """cells
 
          cells of mesh.
