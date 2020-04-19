@@ -10,7 +10,7 @@ import numpy as np
 def hexahedrons_to_quads(cell_datas: np.ndarray) -> np.ndarray:
     """hexahedrons_to_quads
 
-     convert hexahedrons cells to quad faces.
+     convert hexahedron cells to quad faces.
 
     Args:
        cell_datas: point index of cells
@@ -40,6 +40,35 @@ def hexahedrons_to_quads(cell_datas: np.ndarray) -> np.ndarray:
             [cell_data[3], cell_data[2], cell_data[6], cell_data[7]]
         )
     return face_datas
+
+def tetra_to_triangle(cell_datas: np.ndarray) -> np.ndarray:
+    """tetra_to_triangle
+
+     convert tetra cells to triangle.
+
+    Args:
+       cell_datas: point index of cells
+
+    Returns:
+       face_datas: point index of faces
+
+    """
+    face_datas = []
+    for cell_data in cell_datas:
+        face_datas.append(
+            [cell_data[0], cell_data[1], cell_data[2]]
+        )
+        face_datas.append(
+            [cell_data[1], cell_data[3], cell_data[2]]
+        )
+        face_datas.append(
+            [cell_data[0], cell_data[2], cell_data[3]]
+        )
+        face_datas.append(
+            [cell_data[0], cell_data[3], cell_data[1]]
+        )
+    return face_datas
+
 
 class Mesh:
     """Mesh object
