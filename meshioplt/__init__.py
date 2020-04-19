@@ -74,7 +74,8 @@ def cell_to_face(cell: Tuple[str, np.ndarray]) -> Tuple[str, np.ndarray]:
     else:
         face_type = "none"
         face_datas = np.array([])
-    return (face_type, np.array(face_datas))
+    face = (face_type, np.array(face_datas))
+    return face
 
 
 class Mesh:
