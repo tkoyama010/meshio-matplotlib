@@ -5,7 +5,7 @@ from numpy.testing import assert_array_equal
 import meshioplt as mplt
 
 
-def test():
+def test_hexahedron():
     points = np.array(
         [
             [0.0, 0.0, 0.0],
@@ -54,6 +54,20 @@ def test():
                 ]
             ),
         ),
+    ]
+    assert expected[0][0] == actual[0][0]
+    assert_array_equal(expected[0][1], actual[0][1])
+
+
+def test_tetra():
+    points = np.array(
+        [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0],]
+    )
+    cells = [("tetra", np.array([[0, 1, 2, 3]]))]
+    mesh = mplt.Mesh(points, cells)
+    actual = mesh.faces
+    expected = [
+        ("triangle", np.array([[0, 1, 2], [1, 3, 2], [0, 2, 3], [0, 3, 1]])),
     ]
     assert expected[0][0] == actual[0][0]
     assert_array_equal(expected[0][1], actual[0][1])
