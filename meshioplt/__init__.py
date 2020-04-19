@@ -15,6 +15,7 @@ class Mesh:
     Attributes:
         points : points of mesh.
         cells : cells of mesh.
+        faces : faces of mesh.
 
     """
 
@@ -37,3 +38,11 @@ class Mesh:
          cells of mesh.
         """
         return self._cells
+
+    @property
+    def faces(self) -> List[Tuple[str, np.ndarray]]:
+        """faces
+
+         faces of mesh.
+        """
+        return [("", np.array([]))]
