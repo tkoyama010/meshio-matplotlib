@@ -1,5 +1,6 @@
 # meshioplt
 ![Python package](https://github.com/tkoyama010/meshioplt/workflows/Python%20package/badge.svg)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 [meshio](https://github.com/nschloe/meshio):heart: [matplotlib](https://github.com/matplotlib/matplotlib)
 
