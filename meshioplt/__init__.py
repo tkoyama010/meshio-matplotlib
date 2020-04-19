@@ -45,4 +45,19 @@ class Mesh:
 
          faces of mesh.
         """
-        return [("", np.array([]))]
+        faces = [
+            (
+                "quad",
+                np.array(
+                    [
+                        [0, 1, 2, 3],
+                        [5, 4, 7, 6],
+                        [4, 0, 6, 2],
+                        [1, 5, 3, 7],
+                        [4, 5, 0, 1],
+                        [2, 3, 6, 7],
+                    ]
+                ),
+            )
+        ]
+        return faces
