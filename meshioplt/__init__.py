@@ -1,4 +1,39 @@
+"""meshio :heart: matplotlib
+
+     * :exclamation: Inspired by Custom 3D engine in Matplotlib
+"""
+from typing import List, Tuple
+
+import numpy as np
+
+
 class Mesh:
-    def __init__(self, points, cells):
-        self.points = points
-        self.cells = cells
+    """Mesh object
+
+     Mesh information of plot
+
+    Attributes:
+        points : points of mesh.
+        cells : cells of mesh.
+
+    """
+
+    def __init__(self, points: np.ndarray, cells: List[Tuple[str, np.ndarray]]) -> None:
+        self._points = points
+        self._cells = cells
+
+    @property
+    def points(self) -> np.ndarray:
+        """points
+
+         points of mesh.
+        """
+        return self._points
+
+    @property
+    def cells(self) -> List[Tuple[str, np.ndarray]]:
+        """cells
+
+         cells of mesh.
+        """
+        return self._cells
