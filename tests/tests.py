@@ -1,5 +1,6 @@
 import meshio
 import numpy as np
+from numpy.testing import assert_array_equal
 
 import meshioplt as mplt
 
@@ -35,4 +36,5 @@ def test():
             ),
         )
     ]
-    assert expected == actual
+    assert expected[0][0] == actual[0][0]
+    assert_array_equal(expected[0][1], actual[0][1])
