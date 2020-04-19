@@ -6,6 +6,9 @@ from typing import List, Tuple
 
 import numpy as np
 
+POINTS = np.ndarray
+CELLS = List[Tuple(str, np.ndarray)]
+
 
 class Mesh:
     """Mesh object
@@ -18,12 +21,12 @@ class Mesh:
 
     """
 
-    def __init__(self, points: np.ndarray, cells: List[Tuple(str, np.ndarray)]) -> None:
+    def __init__(self, points: POINTS, cells: CELLS) -> None:
         self._points = points
         self._cells = cells
 
     @property
-    def points(self) -> np.ndarray:
+    def points(self) -> POINTS:
         """points
 
          points of mesh.
@@ -31,7 +34,7 @@ class Mesh:
         return self._points
 
     @property
-    def cells(self) -> List[Tuple(str, np.ndarray)]:
+    def cells(self) -> CELLS:
         """cells
 
          cells of mesh.
