@@ -69,7 +69,7 @@ def cell_to_face(cell: Tuple[str, np.ndarray]) -> Tuple[str, np.ndarray]:
         face_type = "quad"
         face_datas = hexahedrons_to_quads(cell_datas)
         return (face_type, np.array(face_datas))
-    if cell_type == "tetra":
+    elif cell_type == "tetra":
         face_type = "triangle"
         face_datas = tetra_to_triangle(cell_datas)
         return (face_type, np.array(face_datas))
