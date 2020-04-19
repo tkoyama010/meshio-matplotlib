@@ -21,24 +21,12 @@ def hexahedrons_to_quads(cell_datas: np.ndarray) -> np.ndarray:
     """
     face_datas = []
     for cell_data in cell_datas:
-        face_datas.append(
-            [cell_data[0], cell_data[1], cell_data[2], cell_data[3]]
-        )
-        face_datas.append(
-            [cell_data[5], cell_data[4], cell_data[7], cell_data[6]]
-        )
-        face_datas.append(
-            [cell_data[4], cell_data[0], cell_data[3], cell_data[7]]
-        )
-        face_datas.append(
-            [cell_data[1], cell_data[5], cell_data[6], cell_data[2]]
-        )
-        face_datas.append(
-            [cell_data[4], cell_data[5], cell_data[1], cell_data[0]]
-        )
-        face_datas.append(
-            [cell_data[3], cell_data[2], cell_data[6], cell_data[7]]
-        )
+        face_datas.append([cell_data[0], cell_data[1], cell_data[2], cell_data[3]])
+        face_datas.append([cell_data[5], cell_data[4], cell_data[7], cell_data[6]])
+        face_datas.append([cell_data[4], cell_data[0], cell_data[3], cell_data[7]])
+        face_datas.append([cell_data[1], cell_data[5], cell_data[6], cell_data[2]])
+        face_datas.append([cell_data[4], cell_data[5], cell_data[1], cell_data[0]])
+        face_datas.append([cell_data[3], cell_data[2], cell_data[6], cell_data[7]])
     return face_datas
 
 
@@ -56,18 +44,10 @@ def tetra_to_triangle(cell_datas: np.ndarray) -> np.ndarray:
     """
     face_datas = []
     for cell_data in cell_datas:
-        face_datas.append(
-            [cell_data[0], cell_data[1], cell_data[2]]
-        )
-        face_datas.append(
-            [cell_data[1], cell_data[3], cell_data[2]]
-        )
-        face_datas.append(
-            [cell_data[0], cell_data[2], cell_data[3]]
-        )
-        face_datas.append(
-            [cell_data[0], cell_data[3], cell_data[1]]
-        )
+        face_datas.append([cell_data[0], cell_data[1], cell_data[2]])
+        face_datas.append([cell_data[1], cell_data[3], cell_data[2]])
+        face_datas.append([cell_data[0], cell_data[2], cell_data[3]])
+        face_datas.append([cell_data[0], cell_data[3], cell_data[1]])
     return face_datas
 
 
