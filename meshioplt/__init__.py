@@ -2,8 +2,10 @@
 
      * :exclamation: Inspired by Custom 3D engine in Matplotlib
 """
-import numpy as np
 from typing import List, Tuple
+
+import numpy as np
+
 
 class Mesh:
     """Mesh object
