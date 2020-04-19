@@ -64,3 +64,5 @@ def test():
     ]
     assert expected[0][0] == actual[0][0]
     assert_array_equal(expected[0][1], actual[0][1])
+    assert expected[1][0] == actual[1][0]
+    assert_array_equal(expected[1][1], actual[1][1])
