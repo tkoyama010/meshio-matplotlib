@@ -46,6 +46,7 @@ jobs:
         use-black: true
         use-mypy: true
         use-isort: true
+        extra-pylint-options: meshioplt
     - name: Test with pytest
       run: |
         pip install pytest
