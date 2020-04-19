@@ -52,6 +52,17 @@ def tetra_to_triangle(cell_datas: np.ndarray) -> np.ndarray:
 
 
 def cell_to_face(cell: Tuple[str, np.ndarray]) -> Tuple[str, np.ndarray]:
+    """cell_to_face
+
+     convert cell to face.
+
+    Args:
+       cell: data structure of cell
+
+    Returns:
+       face: data structure of face
+    """
+
     cell_type = cell[0]
     cell_datas = cell[1]
     if cell_type == "hexahedron":
