@@ -87,4 +87,8 @@ class Mesh:
                 face_type = "quad"
                 face_datas = hexahedrons_to_quads(cell_datas)
                 faces.append((face_type, np.array(face_datas)))
+            if cell_type == "tetra":
+                face_type = "triangle"
+                face_datas = tetra_to_triangle(cell_datas)
+                faces.append((face_type, np.array(face_datas)))
         return faces
