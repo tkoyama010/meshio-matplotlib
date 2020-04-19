@@ -53,22 +53,22 @@ class Mesh:
             face_datas = []
             for cell_data in cell_datas:
                 face_datas.append(
-                        [cell_data[0], cell_data[1], cell_data[2], cell_data[3]]
+                    [cell_data[0], cell_data[1], cell_data[2], cell_data[3]]
                 )
                 face_datas.append(
-                        [cell_data[5], cell_data[4], cell_data[7], cell_data[6]]
+                    [cell_data[5], cell_data[4], cell_data[7], cell_data[6]]
                 )
                 face_datas.append(
-                        [cell_data[4], cell_data[0], cell_data[3], cell_data[7]]
+                    [cell_data[4], cell_data[0], cell_data[3], cell_data[7]]
                 )
                 face_datas.append(
-                        [cell_data[1], cell_data[5], cell_data[6], cell_data[2]]
+                    [cell_data[1], cell_data[5], cell_data[6], cell_data[2]]
                 )
                 face_datas.append(
-                        [cell_data[4], cell_data[5], cell_data[1], cell_data[0]]
+                    [cell_data[4], cell_data[5], cell_data[1], cell_data[0]]
                 )
                 face_datas.append(
-                        [cell_data[3], cell_data[2], cell_data[6], cell_data[7]]
+                    [cell_data[3], cell_data[2], cell_data[6], cell_data[7]]
                 )
             faces.append((face_type, np.array(face_datas)))
         return faces
