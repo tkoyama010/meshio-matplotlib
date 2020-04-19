@@ -68,13 +68,13 @@ def cell_to_face(cell: Tuple[str, np.ndarray]) -> Tuple[str, np.ndarray]:
     if cell_type == "hexahedron":
         face_type = "quad"
         face_datas = hexahedrons_to_quads(cell_datas)
-        return (face_type, np.array(face_datas))
     elif cell_type == "tetra":
         face_type = "triangle"
         face_datas = tetra_to_triangle(cell_datas)
-        return (face_type, np.array(face_datas))
     else:
-        return ("none", np.array([]))
+        face_type = "none"
+        face_datas = np.array([])
+    return (face_type, np.array(face_datas))
 
 
 class Mesh:
