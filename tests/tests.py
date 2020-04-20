@@ -74,4 +74,10 @@ def test_tetra():
 
 
 def test_collection():
+    points = np.array(
+        [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0],]
+    )
+    cells = [("tetra", np.array([[0, 1, 2, 3]]))]
+    mesh = mplt.Mesh(points, cells)
+    collection = mesh.collection()
     assert False
