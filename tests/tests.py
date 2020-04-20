@@ -71,3 +71,7 @@ def test_tetra():
     ]
     assert expected[0][0] == actual[0][0]
     assert_array_equal(expected[0][1], actual[0][1])
+
+
+def test_collection():
+    assert False
