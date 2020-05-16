@@ -30,7 +30,7 @@ jobs:
         private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: install
       run: |
-        (cd mayavi; git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
+        (git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
         pip3 install -U pip setuptools
         pip3 install -r ./requirements.txt
     - name: update
