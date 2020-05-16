@@ -1,2 +1,4 @@
 meshio
 matplotlib
+sphinx-intl
+transifex-client
