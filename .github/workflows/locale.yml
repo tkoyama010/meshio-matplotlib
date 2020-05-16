@@ -42,7 +42,7 @@ jobs:
     - name: git_config
       run: |
         git branch -a
-        git checkout ${GITHUB_BASE_REF}
+        git checkout HEAD
         git config --global user.email $GITHUB_REPOSITORY
         git config --global user.name $GITHUB_REPOSITORY
     - name: commit
