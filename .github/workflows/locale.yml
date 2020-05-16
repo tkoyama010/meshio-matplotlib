@@ -52,5 +52,4 @@ jobs:
         git add .
         git commit --allow-empty -m ":green_heart: $JOB_ID
         $HTML_URL"
-        git pull
         git push origin HEAD
