@@ -13,7 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-locale_dirs = [os.path.join(basedir, "../locale/")]
+locale_dirs = ["../locale/"]
 
 
 # -- Project information -----------------------------------------------------
