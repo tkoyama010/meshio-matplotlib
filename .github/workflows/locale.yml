@@ -41,6 +41,8 @@ jobs:
         sh ./locale/update.sh
     - name: git_config
       run: |
+        git branch -a
+        git checkout ${{ github.ref }}
         git config --global user.email $GITHUB_REPOSITORY
         git config --global user.name $GITHUB_REPOSITORY
     - name: commit
