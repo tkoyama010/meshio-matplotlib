@@ -49,6 +49,7 @@ jobs:
         HTML_URL: ${{ steps.jobs.outputs.html_url }}
       run: |
         git add .
+        git commit --allow-empty -m ":green_heart: $JOB_ID
         $HTML_URL"
         git remote -v
         git remote add github git@github.com:$GITHUB_REPOSITORY.git
