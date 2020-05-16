@@ -2,9 +2,6 @@ name: meshioplt-auto-update
 on:
   schedule:
     - cron:  '0 0 * * *'
-  pull_request:
-    branches:
-      - master
 jobs:
   script:
     runs-on: ubuntu-latest
