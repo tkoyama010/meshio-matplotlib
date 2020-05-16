@@ -1,8 +1,5 @@
 name: meshioplt-auto-update
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron:  '0 0 * * *'
   pull_request:
