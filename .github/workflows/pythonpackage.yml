@@ -50,7 +50,7 @@ jobs:
         extra-flake8-options: --max-line-length=88
     - name: Sphinx Build
       run: |
-        pip intall -r requirements.txt
+        pip install -r requirements.txt
         (cd doc; make html)
     - name: Test with pytest
       run: |
