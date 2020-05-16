@@ -30,7 +30,7 @@ jobs:
         private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: install
       run: |
-        (git fetch origin; git checkout tkoyama010-patch-3; git reset --hard origin/tkoyama010-patch-3; git branch -a)
+        (git fetch origin; git checkout $GITHUB_REF; git reset --hard origin/$GITHUB_REF; git branch -a)
         pip3 install -U pip setuptools
         pip3 install -r ./requirements.txt
     - name: update
@@ -43,7 +43,7 @@ jobs:
     - name: git_config
       run: |
         git branch -a
-        git checkout tkoyama010-patch-3
+        git checkout $GITHUB_REF
         git config --global user.email $GITHUB_REPOSITORY
         git config --global user.name $GITHUB_REPOSITORY
     - name: commit
@@ -56,4 +56,4 @@ jobs:
         $HTML_URL"
         git remote -v
         git remote add github git@github.com:$GITHUB_REPOSITORY.git
-        git push github tkoyama010-patch-3
+        git push github $GITHUB_REF
