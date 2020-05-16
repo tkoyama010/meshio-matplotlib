@@ -49,10 +49,9 @@ jobs:
         extra-mypy-options: --no-implicit-optional
         extra-flake8-options: --max-line-length=88
     - name: Sphinx Build
-      uses: ammaraskar/sphinx-action@0.4
-      with:
-        docs-folder: doc
-        build-command: make html
+      run: |
+        pip intall -r requirements.txt
+        (cd doc; make html)
     - name: Test with pytest
       run: |
         pip install pytest
