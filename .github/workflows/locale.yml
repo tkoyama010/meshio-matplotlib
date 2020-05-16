@@ -41,7 +41,6 @@ jobs:
         sh ./locale/update.sh
     - name: git_config
       run: |
-        git remote set-head github -a
         git config --global user.email $GITHUB_REPOSITORY
         git config --global user.name $GITHUB_REPOSITORY
     - name: commit
@@ -49,9 +48,10 @@ jobs:
         JOB_ID: ${{ steps.jobs.outputs.job_id }}
         HTML_URL: ${{ steps.jobs.outputs.html_url }}
       run: |
+        git remote add github git@github.com:$GITHUB_REPOSITORY.git
+        git remote set-head github -a
         git add .
         git commit --allow-empty -m ":green_heart: $JOB_ID
         $HTML_URL"
         git remote -v
-        git remote add github git@github.com:$GITHUB_REPOSITORY.git
         git push github HEAD
