@@ -18,11 +18,11 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         job_name: script
-    - name: checkout with submodule
-      uses: actions/checkout@v2
+    - name: checkout
+      uses: actions/checkout@master
       with:
-        submodules: true
         token: ${{ secrets.PERSONAL_ACCESSTOKEN }}
+        ref: ${{ github.ref }}
     - name: Setup SSH
       uses: MrSquaare/ssh-setup-action@v1
       with:
@@ -41,8 +41,6 @@ jobs:
         sh ./locale/update.sh
     - name: git_config
       run: |
-        git branch -a
-        git checkout ${GITHUB_REF##*/}
         git config --global user.email $GITHUB_REPOSITORY
         git config --global user.name $GITHUB_REPOSITORY
     - name: commit
