@@ -1,3 +1,5 @@
 meshio
 matplotlib
 nbsphinx
+sphinx-intl
+transifex-client
