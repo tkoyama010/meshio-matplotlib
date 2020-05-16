@@ -41,6 +41,7 @@ jobs:
         sh ./locale/update.sh
     - name: git_config
       run: |
+        git remote set-head github -a
         git config --global user.email $GITHUB_REPOSITORY
         git config --global user.name $GITHUB_REPOSITORY
     - name: commit
