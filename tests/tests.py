@@ -1,4 +1,3 @@
-import meshio
 import numpy as np
 from numpy.testing import assert_array_equal
 import pytest
@@ -29,7 +28,7 @@ points1 = np.array(
 )
 
 cells1 = [
-    ("hexahedron", np.array([[0, 1, 3, 2, 4, 5, 7, 6], [7, 8, 10, 9, 11, 12, 14, 13]]),)
+    ("hexahedron", np.array([[0, 1, 3, 2, 4, 5, 7, 6], [7, 8, 10, 9, 11, 12, 14, 13]]))
 ]
 
 faces1 = [
@@ -56,9 +55,7 @@ faces1 = [
 
 # tetra
 
-points2 = np.array(
-    [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0],]
-)
+points2 = np.array([[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])
 
 cells2 = [("tetra", np.array([[0, 1, 2, 3]]))]
 
