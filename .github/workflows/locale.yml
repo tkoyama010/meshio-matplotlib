@@ -24,6 +24,8 @@ jobs:
         private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: install
       run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends pandoc
         pip3 install -U pip setuptools
         pip3 install -r ./requirements.txt
     - name: update
