@@ -16,30 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../doc/contents.rst:9
-msgid "Contents:"
-msgstr ""
-
-#: ../../doc/contents.rst:7
-msgid "Welcome to meshioplt's documentation!"
-msgstr ""
-
-#: ../../doc/contents.rst:16
-msgid "Indices and tables"
-msgstr ""
-
-#: ../../doc/contents.rst:18
-msgid ":ref:`genindex`"
-msgstr ""
-
-#: ../../doc/contents.rst:19
-msgid ":ref:`modindex`"
-msgstr ""
-
-#: ../../doc/contents.rst:20
-msgid ":ref:`search`"
-msgstr ""
-
-#: ../../doc/contents.rst:23
-msgid "Examples"
+#: ../../doc/examples/index.ipynb:9
+msgid "Getting Started"
 msgstr ""
