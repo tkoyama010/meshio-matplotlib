@@ -47,4 +47,4 @@ msgstr ":ref:`search`"
 
 #: ../../doc/contents.rst:23
 msgid "Examples"
-msgstr ""
+msgstr "例"
