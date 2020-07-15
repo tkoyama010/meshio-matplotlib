@@ -4,7 +4,7 @@ on:
     - cron:  '0 3 * * *'
 jobs:
   script:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: Get Job URL
       uses: Tiryoh/gha-jobid-action@v0
