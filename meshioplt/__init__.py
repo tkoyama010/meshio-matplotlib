@@ -4,13 +4,10 @@
 """
 from typing import List, Tuple
 
-import numpy as np
-
-import meshio
-
-from matplotlib.patches import Polygon
-
 import matplotlib.pyplot as plt
+import meshio
+import numpy as np
+from matplotlib.patches import Polygon
 
 
 def hexahedrons_to_quads(cell_datas: np.ndarray) -> np.ndarray:
