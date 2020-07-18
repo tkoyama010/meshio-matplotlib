@@ -20,5 +20,6 @@ WORKDIR ${HOME}
 USER root
 COPY . ${HOME}
 RUN pip3 install -r requirements.txt
+RUN pip3 install .
 RUN chown -R ${NB_USER} ${HOME}
 USER ${USER}
