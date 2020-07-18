@@ -6,6 +6,10 @@ from typing import List, Tuple
 
 import numpy as np
 
+import meshio
+
+from matplotlib.patches import Polygon
+
 
 def hexahedrons_to_quads(cell_datas: np.ndarray) -> np.ndarray:
     """hexahedrons_to_quads
@@ -76,6 +80,38 @@ def cell_to_face(cell: Tuple[str, np.ndarray]) -> Tuple[str, np.ndarray]:
         face_datas = np.array([])
     face = (face_type, np.array(face_datas))
     return face
+
+
+def mesh_patches(file_name: str) -> List[Polygon]:
+    """mesh_patches
+
+     convert mesh to patches.
+
+    Args:
+       file_name: file name of mesh file
+
+    Returns:
+       patches: list of patch
+
+    """
+    patches = []
+    mesh = meshio.read(file_name)
+    points = mesh.points
+    cells = mesh.cells
+    for cell in cells:
+        index = cell.data[0]
+        polygon = plt.Polygon(
+            (
+                (points[index[0], 0], points[index[0], 1]),
+                (points[index[1], 0], points[index[1], 1]),
+                (points[index[2], 0], points[index[2], 1]),
+                (points[index[3], 0], points[index[3], 1]),
+            ),
+            edgecolor="black",
+            facecolor="gray",
+        )
+        patches.append(polygon)
+    return patches
 
 
 class Mesh:
