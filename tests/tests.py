@@ -79,7 +79,7 @@ def test_faces(points, cells, faces):
 
 def test_mesh_patches():
     this_dir = pathlib.Path(__file__).resolve().parent
-    filename = this_dir / "mesh1.vtk"
+    file_name = this_dir / "mesh1.vtk"
     patches = mesh_patches(file_name)
     actual = patches[0].get_xy()
     expected = np.array([[0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [0.0, 0.0]])
