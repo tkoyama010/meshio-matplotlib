@@ -10,6 +10,8 @@ import meshio
 
 from matplotlib.patches import Polygon
 
+import matplotlib.pyplot as plt
+
 
 def hexahedrons_to_quads(cell_datas: np.ndarray) -> np.ndarray:
     """hexahedrons_to_quads
