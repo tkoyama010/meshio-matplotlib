@@ -1,8 +1,9 @@
-import numpy as np
-from numpy.testing import assert_array_equal
-import pytest
+import pathlib
 
+import numpy as np
+import pytest
 from meshioplt import Mesh, mesh_patches
+from numpy.testing import assert_array_equal
 
 # hexahedron
 
@@ -77,7 +78,9 @@ def test_faces(points, cells, faces):
 
 
 def test_mesh_patches():
-    patches = mesh_patches("mesh1.vtk")
+    this_dir = pathlib.Path(__file__).resolve().parent
+    filename = this_dir / "mesh1.vtk"
+    patches = mesh_patches(file_name)
     actual = patches[0].get_xy()
     expected = np.array([[0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [0.0, 0.0]])
     assert_array_equal(expected, actual)
