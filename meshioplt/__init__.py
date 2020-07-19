@@ -81,20 +81,20 @@ def cell_to_face(cell: Tuple[str, np.ndarray]) -> Tuple[str, np.ndarray]:
     return face
 
 
-def mesh_patches(file_name: str) -> List[Polygon]:
+def mesh_patches(path_name: str) -> List[Polygon]:
     """mesh_patches
 
      convert mesh to patches.
 
     Args:
-       file_name: file name of mesh file
+       path_name: file name of mesh file
 
     Returns:
        patches: list of patch
 
     """
     patches = []
-    mesh = meshio.read(file_name)
+    mesh = meshio.read(path_name)
     points = mesh.points
     cells = mesh.cells
     for cell in cells:
