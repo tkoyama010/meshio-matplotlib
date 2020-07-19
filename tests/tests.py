@@ -81,12 +81,14 @@ def test_faces(points, cells, faces):
     "file_name, expected",
     [
         ("mesh1.vtk",
-        np.array([[0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [0.0, 0.0]])),
+        [np.array([[0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [0.0, 0.0]])]),
     ],
 )
 def test_mesh_patches(file_name, expected):
     this_dir = pathlib.Path(__file__).resolve().parent
     path_name = this_dir / file_name
     patches = mesh_patches(path_name)
-    actual = patches[0].get_xy()
+    actual = []
+    for patch in patches:
+        actual.append(patch.get_xy())
     assert_array_equal(expected, actual)
