@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: meshioplt \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-17 03:01+0000\n"
+"POT-Creation-Date: 2020-07-19 03:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,5 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../doc/examples/index.ipynb:9
-msgid "Getting Started"
+msgid "What we want to do ?"
+msgstr ""
+
+#: ../../doc/examples/index.ipynb:11
+msgid "When we want to plot mesh it cost a lot to code."
+msgstr ""
+
+#: ../../doc/examples/index.ipynb:251
+msgid "What we can do in meshioplt"
+msgstr ""
+
+#: ../../doc/examples/index.ipynb:253
+msgid "We can read mesh file and write to AxesSubplot. We can use AxesSubplot as matplotlib’s AxesSubplot"
 msgstr ""
