@@ -77,10 +77,29 @@ def test_faces(points, cells, faces):
     assert_array_equal(expected[0][1], actual[0][1])
 
 
-def test_mesh_patches():
+@pytest.mark.parametrize(
+    "file_name, expected",
+    [
+        (
+            "mesh1.vtk",
+            [np.array([[0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [0.0, 0.0]])],
+        ),
+        (
+            "mesh2.vtk",
+            [
+                np.array([[0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [0.0, 0.0]]),
+                np.array([[1.0, 0.0], [2.0, 0.0], [2.0, 1.0], [1.0, 1.0], [1.0, 0.0]]),
+                np.array([[0.0, 1.0], [1.0, 1.0], [1.0, 2.0], [0.0, 2.0], [0.0, 1.0]]),
+                np.array([[1.0, 1.0], [2.0, 1.0], [2.0, 2.0], [1.0, 2.0], [1.0, 1.0]]),
+            ],
+        ),
+    ],
+)
+def test_mesh_patches(file_name, expected):
     this_dir = pathlib.Path(__file__).resolve().parent
-    file_name = this_dir / "mesh1.vtk"
-    patches = mesh_patches(file_name)
-    actual = patches[0].get_xy()
-    expected = np.array([[0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [0.0, 0.0]])
+    path_name = this_dir / file_name
+    patches = mesh_patches(path_name)
+    actual = []
+    for patch in patches:
+        actual.append(patch.get_xy())
     assert_array_equal(expected, actual)
