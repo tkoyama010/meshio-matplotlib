@@ -98,18 +98,18 @@ def mesh_patches(path_name: str) -> List[Polygon]:
     points = mesh.points
     cells = mesh.cells
     for cell in cells:
-        index = cell.data[0]
-        polygon = plt.Polygon(
-            (
-                (points[index[0], 0], points[index[0], 1]),
-                (points[index[1], 0], points[index[1], 1]),
-                (points[index[2], 0], points[index[2], 1]),
-                (points[index[3], 0], points[index[3], 1]),
-            ),
-            edgecolor="black",
-            facecolor="gray",
-        )
-        patches.append(polygon)
+        for index in cell.data:
+            polygon = plt.Polygon(
+                (
+                    (points[index[0], 0], points[index[0], 1]),
+                    (points[index[1], 0], points[index[1], 1]),
+                    (points[index[2], 0], points[index[2], 1]),
+                    (points[index[3], 0], points[index[3], 1]),
+                ),
+                edgecolor="black",
+                facecolor="gray",
+            )
+            patches.append(polygon)
     return patches
 
 
