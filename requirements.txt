@@ -1,6 +1,7 @@
 meshio
 matplotlib
 nbsphinx
+sphinx
 sphinx-intl
 transifex-client
 jupyterlab
