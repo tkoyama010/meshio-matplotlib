@@ -3,13 +3,17 @@
 # This file is distributed under the same license as the meshioplt package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: meshioplt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-19 03:02+0000\n"
+"POT-Creation-Date: 2020-07-20 03:02+0000\n"
 "PO-Revision-Date: 2020-05-17 03:01+0000\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/getfem-doc/teams/110050/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,18 +23,19 @@ msgstr ""
 
 #: ../../doc/examples/index.ipynb:9
 msgid "What we want to do ?"
-msgstr ""
+msgstr "私たちは何をしたいの?"
 
 #: ../../doc/examples/index.ipynb:11
 msgid "When we want to plot mesh it cost a lot to code."
-msgstr ""
+msgstr "メッシュをプロットしようとすると、コーディングに多大なコストがかかります。"
 
-#: ../../doc/examples/index.ipynb:251
+#: ../../doc/examples/index.ipynb:309
 msgid "What we can do in meshioplt"
-msgstr ""
+msgstr "meshiopltでできること"
 
-#: ../../doc/examples/index.ipynb:253
+#: ../../doc/examples/index.ipynb:311
 msgid ""
 "We can read mesh file and write to AxesSubplot. We can use AxesSubplot as "
 "matplotlib’s AxesSubplot"
 msgstr ""
+"メッシュファイルを読み込んで、AxesSubplotに書き込むことができます。AxesSubplotをmatplotlibのAxesSubplotとして使用できます。"
