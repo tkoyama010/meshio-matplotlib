@@ -5,3 +5,4 @@ sphinx
 sphinx-intl
 transifex-client
 jupyterlab
+rise
