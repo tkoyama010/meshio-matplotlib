@@ -6,3 +6,4 @@ sphinx-intl
 transifex-client
 jupyterlab
 rise
+pyvirtualdisplay
