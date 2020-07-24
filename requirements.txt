@@ -6,4 +6,3 @@ sphinx-intl
 transifex-client
 jupyterlab
 rise
-mayavi
