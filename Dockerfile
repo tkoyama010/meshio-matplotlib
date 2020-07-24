@@ -1,9 +1,9 @@
 FROM getfemdoc/getfem:stable
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt update
-RUN apt -y install python3-pip
-RUN apt -y install mayavi2
-RUN apt -y install xvfb
+RUN apt-get update
+RUN apt-get -y install python3-pip
+RUN apt-get -y install mayavi2
+RUN apt-get -y install xvfb
 
 # install the notebook package
 RUN pip3 install --no-cache --upgrade pip && \
