@@ -9,7 +9,7 @@ RUN git clone https://github.com/enthought/mayavi.git; \
     pip3 install PyQt5;\
     python3 setup.py install
 # RUN apt-get -y install mayavi2
-RUN libgl1-mesa-dev
+RUN apt-get -y install libgl1-mesa-dev
 RUN apt-get -y install xvfb
 
 # install the notebook package
