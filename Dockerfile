@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM getfemdoc/getfem:stable
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get -y install mayavi2
