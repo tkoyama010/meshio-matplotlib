@@ -8,7 +8,15 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/tkoyama010/meshioplt?style=flat-square)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-[meshio](https://github.com/nschloe/meshio):heart: [matplotlib](https://github.com/matplotlib/matplotlib)
+<p align="center">
+  <a href="https://github.com/nschloe/meshio"><img alt="meshio" src="https://nschloe.github.io/meshio/logo-with-text.svg" width="40%"></a>
+</p>
+<p align="center">
+  <a href="https://upload.wikimedia.org/wikipedia/commons/c/c8/Love_Heart_symbol.svg"><img alt="heart" src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Love_Heart_symbol.svg" width="20%"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/matplotlib/matplotlib"><img alt="meshio" src="https://matplotlib.org/_static/logo2.svg" width="40%"></a>
+</p>
 
 This library is a conveter from meshio object to matplotlib.collections object.
 
