@@ -2,7 +2,13 @@ FROM getfemdoc/getfem:stable
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get -y install python3-pip
-RUN apt-get -y install mayavi2
+RUN apt-get -y install git
+RUN git clone https://github.com/enthought/mayavi.git; \
+    cd mayavi;\
+    pip3 install -r requirements.txt;\
+    pip3 install PyQt5;\
+    python3 setup.py install
+# RUN apt-get -y install mayavi2
 RUN apt-get -y install xvfb
 
 # install the notebook package
