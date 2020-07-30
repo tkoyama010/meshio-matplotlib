@@ -7,6 +7,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/tkoyama010/meshioplt.svg?style=flat-square)](https://img.shields.io/github/issues/tkoyama010/meshioplt?style=flat-square)
 ![GitHub contributors](https://img.shields.io/github/contributors/tkoyama010/meshioplt?style=flat-square)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://timothycrosley.github.io/isort/)
+
 
 [meshio](https://github.com/nschloe/meshio):heart: [matplotlib](https://github.com/matplotlib/matplotlib)
 
