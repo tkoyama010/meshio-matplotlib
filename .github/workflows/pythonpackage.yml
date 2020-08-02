@@ -38,7 +38,7 @@ jobs:
         extra-flake8-options: --max-line-length=88
     - name: codespell
       run: |
-        codespell ./ -S *.pyc -I ignore_words.txt
+        codespell ./ --skip=".mypy_cache,.git,*.doctree,*.pickle,*.png" -I ignore_words.txt
     - name: Sphinx Build
       run: |
         sudo apt-get update
